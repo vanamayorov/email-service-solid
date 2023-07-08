@@ -1,0 +1,13 @@
+<div>
+    <h2>
+        <%= title %>
+    </h2>
+    <h3>Month num : <%= month %>
+    </h3>
+    <div>
+        <%- body %>
+    </div>
+    <% if(image) { %>
+        <div><img src="<%= image %>" alt="image"></div>
+    <% } %>
+</div>

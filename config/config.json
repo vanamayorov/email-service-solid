@@ -1,0 +1,11 @@
+{
+  "mailer": {
+    "host": "",
+    "port": 567,
+    "secure": false,
+    "auth": {
+      "user": "",
+      "pass": ""
+    }
+  }
+}
