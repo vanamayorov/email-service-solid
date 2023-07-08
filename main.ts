@@ -1,11 +1,11 @@
 import { EmailService } from './email.service';
-import { GmailSender } from './senders/gmail.sender';
+import { EmailSender } from './senders/email.sender';
 import { TemplateGenerator } from './template-generators/template-generator';
 
 async function main() {
   const templateGenerator = new TemplateGenerator();
-  const gmailSender = new GmailSender();
-  const emailService = new EmailService(templateGenerator, gmailSender);
+  const emailSender = new EmailSender();
+  const emailService = new EmailService(templateGenerator, emailSender);
 
   await emailService.sendMonthlyEmail({
     from: 'i.m@gmail.com',

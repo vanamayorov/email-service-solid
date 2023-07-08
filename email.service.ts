@@ -1,4 +1,4 @@
-import { GmailSender, Mail } from './senders/gmail.sender';
+import { EmailSender, Mail } from './senders/email.sender';
 import { TemplateGenerator } from './template-generators/template-generator';
 import { MonthlyReportEmailTemplate } from './templates/monthly-report.template';
 import { WeeklyReportEmailTemplate } from './templates/weekly-report.template';
@@ -6,7 +6,7 @@ import { WeeklyReportEmailTemplate } from './templates/weekly-report.template';
 export class EmailService {
   constructor(
     private readonly _templateGenerator: TemplateGenerator,
-    private readonly _gmailSender: GmailSender,
+    private readonly _gmailSender: EmailSender,
   ) {}
 
   public async sendWeeklyEmail(mailOptions: Mail): Promise<void> {
@@ -26,6 +26,7 @@ export class EmailService {
   }
 
   public async sendMonthlyEmail(mailOptions: Mail): Promise<void> {
+    const month = new Date().getUTCMonth() + 1;
     const template = new MonthlyReportEmailTemplate({
       title: 'Monthly email',
       body: `<div>
@@ -37,7 +38,7 @@ export class EmailService {
                     </ul>
                 </div>`,
       image: 'https://nodemailer.com/nm_logo_200x136.png',
-      month: new Date(2023, 12, 5).getUTCMonth(),
+      month,
     });
 
     const html = await this._templateGenerator.generateEmail(template);

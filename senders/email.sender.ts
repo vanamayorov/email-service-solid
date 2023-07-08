@@ -8,7 +8,7 @@ export interface Mail {
   html?: string;
 }
 
-export class GmailSender {
+export class EmailSender {
   private readonly _transporter: nodemailer.Transporter;
 
   constructor() {
