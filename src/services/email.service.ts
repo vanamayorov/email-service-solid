@@ -1,7 +1,7 @@
-import { EmailSender, Mail } from './senders/email.sender';
-import { TemplateGenerator } from './template-generators/template-generator';
-import { MonthlyReportEmailTemplate } from './templates/monthly-report.template';
-import { WeeklyReportEmailTemplate } from './templates/weekly-report.template';
+import { EmailSender, Mail } from '../senders/email.sender';
+import { TemplateGenerator } from '../template-generators/template-generator';
+import { MonthlyReportEmailTemplate } from '../templates/monthly-report.template';
+import { WeeklyReportEmailTemplate } from '../templates/weekly-report.template';
 
 export class EmailService {
   constructor(

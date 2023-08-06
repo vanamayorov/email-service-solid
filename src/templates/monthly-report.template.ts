@@ -2,22 +2,16 @@ import * as ejs from 'ejs';
 import { resolve } from 'path';
 import { readFile } from 'fs/promises';
 import { AbstractTemplate } from './abstract.template';
+import { MonthlyTemplateParams } from './interfaces/monthly-template-params';
 
-export interface WeeklyTemplateParams {
-  title: string;
-  body: string;
-  image: string;
-  weekNum: number;
-}
-
-export class WeeklyReportEmailTemplate extends AbstractTemplate<WeeklyTemplateParams> {
+export class MonthlyReportEmailTemplate extends AbstractTemplate<MonthlyTemplateParams> {
   protected readonly _templatePath = resolve(
     __dirname,
-    'ejs/weekly.template.ejs',
+    'ejs/monthly.template.ejs',
   );
 
-  constructor(weeklyParams: WeeklyTemplateParams) {
-    super(weeklyParams);
+  constructor(params: MonthlyTemplateParams) {
+    super(params);
   }
 
   public async getHTML(): Promise<string> {

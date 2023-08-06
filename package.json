@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "start": "ts-node main.ts",
+    "start": "ts-node src/main.ts",
     "prettier": "prettier --write \"**/*.{ts,json}\"",
     "precommit": "lint-staged"
   },

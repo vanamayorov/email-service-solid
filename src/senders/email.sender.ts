@@ -1,12 +1,6 @@
 import * as nodemailer from 'nodemailer';
 import config from '../config/config.json';
-
-export interface Mail {
-  from: string;
-  to: string;
-  subject: string;
-  html?: string;
-}
+import { Mail } from './mail.interface';
 
 export class EmailSender {
   private readonly _transporter: nodemailer.Transporter;
@@ -33,3 +27,4 @@ export class EmailSender {
     });
   }
 }
+export { Mail };

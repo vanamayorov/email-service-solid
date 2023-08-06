@@ -1,4 +1,4 @@
-import { EmailService } from './email.service';
+import { EmailService } from './services/email.service';
 import { EmailSender } from './senders/email.sender';
 import { TemplateGenerator } from './template-generators/template-generator';
 
